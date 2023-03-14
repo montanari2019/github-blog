@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { ContainerCard, ParagraphContent, TitileDisplay } from "./styled";
 
 export function PostCard() {
+  const history = useNavigate()
+
+  function routerPost(){
+    history('/post')
+  }
+
   return (
-    <ContainerCard>
+    <ContainerCard onClick={routerPost}>
       <TitileDisplay>
         <h2>JavaScript data types and data structures</h2>
         <p>Há 1 dia</p>

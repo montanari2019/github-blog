@@ -22,8 +22,7 @@ export function Profile() {
         <BioParagraph>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
           inventore nesciunt molestiae dolorum accusantium tempora vero
-          corrupti? Quas voluptatem consequatur sed dolor harum quis. Similique
-          eaque minima adipisci distinctio corrupti.
+          
         </BioParagraph>
 
         <CardInfo>

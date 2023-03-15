@@ -10,11 +10,11 @@ export const ProfileContainer = styled.section`
   background: ${(props) => props.theme["base-profile"]};
   box-shadow: 0px 2px 35px #0a2a4a;
   border-radius: 10px;
-  transition: 0.4s;    
-  
-  &:hover{
-    box-shadow: 0px 2px 45px #0B3763;
-    transition: 0.4s    
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: 0px 2px 45px #0b3763;
+    transition: 0.4s;
   }
 
   @media (min-width: 1025px) {
@@ -47,6 +47,7 @@ export const GitButton = styled.a`
   text-transform: uppercase;
   font-size: 0.85rem;
   font-weight: 700;
+  text-decoration: none;
 
   display: flex;
   align-items: center;
@@ -91,6 +92,7 @@ export const CardInfo = styled.div`
 `;
 
 export const CardIcon = styled.div`
+  cursor: default;
   display: flex;
   gap: 0.5rem;
 `;

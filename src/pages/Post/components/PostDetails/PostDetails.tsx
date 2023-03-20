@@ -25,7 +25,10 @@ export function PostDetails({ body }: PostBodyPropd) {
   return (
     <Container>
       <ParagraphContent>
-        <ReactMarkdown  children={body}/>
+        <ReactMarkdown  
+          children={body}
+          remarkPlugins={[]}
+        />
         
       </ParagraphContent>
 

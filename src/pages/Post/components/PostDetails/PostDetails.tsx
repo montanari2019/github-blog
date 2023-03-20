@@ -9,6 +9,10 @@ import {
 } from "./styled";
 
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw"
+import remarkHighlightjs from "remark-highlight.js";
+import remarkBreaks from "remark-breaks";
+import remarkFormat from "remark-code-frontmatter"
 
 {
   /* <Code>: Define o fragmento de código
@@ -25,9 +29,11 @@ export function PostDetails({ body }: PostBodyPropd) {
   return (
     <Container>
       <ParagraphContent>
-        <ReactMarkdown  
+        <ReactMarkdown 
+           
           children={body}
-          remarkPlugins={[]}
+          remarkPlugins={[remarkBreaks, remarkHighlightjs, remarkFormat]}
+          rehypePlugins={[rehypeRaw]}
         />
         
       </ParagraphContent>

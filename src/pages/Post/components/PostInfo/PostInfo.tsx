@@ -3,9 +3,21 @@ import {  Container,  HeaderPostInfo,  CardInfo,  IconsCard,  HeaderItem,  Icons
 import { useNavigate } from "react-router-dom";
 
 import gitLogo from "../../../../assets/git-hub.svg";
+import { dateFormat } from "../../../../utils/formatDateRelativeToNow";
 
-export function PostInfo() {
-    const history = useNavigate()
+interface PostInfoProps{
+  title: string,
+  nameUser:string,
+  comments: number,
+  createdAt: string,
+  urlGitIssue: string
+}
+
+
+export function PostInfo({ comments, createdAt, nameUser, title, urlGitIssue }: PostInfoProps) {
+
+  const { publisherdDateFormatted, publisherdDateRelativeToNow } = dateFormat(createdAt)
+  const history = useNavigate()
 
     function routerHome(){
         history("/")
@@ -19,28 +31,31 @@ export function PostInfo() {
         </HeaderItem>
 
         <HeaderItem>
-          <strong>Ver no github</strong>
+          <a href={urlGitIssue} target="_blank">Ver no github</a>
           <CheckSquareOffset size={15} />
         </HeaderItem>
       </HeaderPostInfo>
 
       <CardInfo>
-        <h1>JavaScript data types and data structures</h1>
+        <h1>{title}</h1>
 
         <IconsInfo>
           <IconsCard>
             <img src={gitLogo} />
-            <p>montanari2019</p>
+            <p>{nameUser}</p>
           </IconsCard>
 
           <IconsCard>
             <CalendarBlank color="#3A536B" size={18} weight="fill" />
-            <p>Há 1 dia</p>
+            <time 
+              title={publisherdDateFormatted}
+              dateTime={new Date(createdAt).toISOString()}
+            >{publisherdDateRelativeToNow}</time>
           </IconsCard>
 
           <IconsCard>
             <ChatCircle color="#3A536B" size={18} weight="fill" />
-            <p>5 comentários</p>
+            <p>{comments} comentário(s)</p>
           </IconsCard>
         </IconsInfo>
       </CardInfo>

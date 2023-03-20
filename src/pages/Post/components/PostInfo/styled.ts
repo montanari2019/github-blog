@@ -25,54 +25,56 @@ export const Container = styled.div`
 `;
 
 export const HeaderPostInfo = styled.header`
-    display: flex;
-    justify-content: space-between;
-
-`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export const HeaderItem = styled.div`
-    color: ${props=> props.theme.blue};
-    text-transform: uppercase;
-    font-size: 0.85rem;
+  color: ${(props) => props.theme.blue};
+  text-transform: uppercase;
+  font-size: 0.85rem;
 
-    display: flex;
-    align-items:center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
-    &:hover{
-        text-decoration: underline;
-        cursor: pointer;
-    }
+  a {
+    text-decoration: none;
 
-`
+    color: ${(props) => props.theme.blue};
+    font-weight: 700;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
 
 export const CardInfo = styled.div`
-    margin-top: 1.20rem;
-    /* display: flex; */
+  margin-top: 1.2rem;
+  /* display: flex; */
 
-    h1{
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-
-`
-
-export const IconsInfo =styled.div`
-    display: flex;
-    flex-direction:column;
-    margin-top: 1.5rem;
-    gap:2rem;
-    /* margin-top: 0.5rem; */
-
-    @media (min-width: 1025px) {
-        flex-direction:row;
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
-`
+`;
 
-export const IconsCard= styled.div`
-    cursor: default;
-    display: flex;
-    gap:0.5rem;
+export const IconsInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  gap: 2rem;
+  /* margin-top: 0.5rem; */
 
-`
+  @media (min-width: 1025px) {
+    flex-direction: row;
+  }
+`;
+
+export const IconsCard = styled.div`
+  cursor: default;
+  display: flex;
+  gap: 0.5rem;
+`;

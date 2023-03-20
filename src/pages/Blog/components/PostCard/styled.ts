@@ -4,7 +4,7 @@ export const ContainerCard = styled.div`
   background: ${(props) => props.theme["base-post"]};
   border-radius: 10px;
   width: 100%;
-  height: 260px;
+  /* height: 260px; */
   padding: 2rem;
   margin-bottom: 2rem;
   transition: 0.4s;
@@ -17,6 +17,8 @@ export const ContainerCard = styled.div`
 
   @media (min-width: 1025px) {
     width: 420px;
+    
+  height: 260px;
   }
 `;
 
@@ -36,17 +38,20 @@ export const TitileDisplay = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 2rem;
   margin-bottom: 1.25rem;
 
   h2 {
     font-size: 1.15rem;
     text-align: left;
+    width: 80%
   }
 
-  p {
+  time {
     font-size: 0.85rem;
     margin-top: 4px;
-    width: 20%;
+    text-align: right;
+    /* width: 20%; */
     color: ${(props) => props.theme["base-span"]};
   }
 `;

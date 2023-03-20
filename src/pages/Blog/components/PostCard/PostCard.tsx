@@ -1,26 +1,36 @@
 import { useNavigate } from "react-router-dom";
+import { PostCardProps } from "./@types";
 import { ContainerCard, ParagraphContent, TitileDisplay } from "./styled";
 
-export function PostCard() {
+import { format, formatDistanceToNow } from "date-fns";
+
+import ptBR from "date-fns/locale/pt-BR";
+import { ReliceBodyIssue } from "../../../../utils/ReliceBodyIssue";
+import { dateFormat } from "../../../../utils/formatDateRelativeToNow";
+
+
+export function PostCard({body, dateCreate, title, numberIssue}:PostCardProps ) {
+  
   const history = useNavigate()
 
+ const { publisherdDateFormatted, publisherdDateRelativeToNow } = dateFormat(dateCreate)
+
   function routerPost(){
-    history('/post')
+    history(`/post/${numberIssue}`)
   }
+
 
   return (
     <ContainerCard onClick={routerPost}>
       <TitileDisplay>
-        <h2>JavaScript data types and data structures</h2>
-        <p>Há 1 dia</p>
+        <h2>{title}</h2>
+        <time  title={publisherdDateFormatted} dateTime={new Date(dateCreate).toISOString()}>
+          {publisherdDateRelativeToNow}
+        </time>
       </TitileDisplay>
 
       <ParagraphContent>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in JavaScript and what properties
-        they have. These can be used to build other data structures. Wherever
-        possible, comparisons with other languages are drawn.
+        {ReliceBodyIssue(body)}
       </ParagraphContent>
     </ContainerCard>
   );

@@ -53,9 +53,9 @@ export const CardPost = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     /* gap: 0 2rem ; */
     /* margin-bottom: 2rem; */
-    flex-wrap: wrap;
 
 
 `

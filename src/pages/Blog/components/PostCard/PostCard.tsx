@@ -2,12 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { PostCardProps } from "./@types";
 import { ContainerCard, ParagraphContent, TitileDisplay } from "./styled";
 
-import { format, formatDistanceToNow } from "date-fns";
 
-import ptBR from "date-fns/locale/pt-BR";
+import ReactGA from "react-ga"
+
 import { ReliceBodyIssue } from "../../../../utils/ReliceBodyIssue";
 import { dateFormat } from "../../../../utils/formatDateRelativeToNow";
-import { DecodedBase64, EncodedBase64 } from "../../../../utils/Base64";
+import { EncodedBase64 } from "../../../../utils/Base64";
 
 
 export function PostCard({body, dateCreate, title, numberIssue}:PostCardProps ) {
@@ -21,6 +21,11 @@ export function PostCard({body, dateCreate, title, numberIssue}:PostCardProps ) 
 
   function routerPost(){
     history(`/post/${numberIssueEncoded}`)
+    ReactGA.event({
+      category: 'Post',
+      action: 'Acessar post',
+      label: 'Post view'
+    })
   }
 
 

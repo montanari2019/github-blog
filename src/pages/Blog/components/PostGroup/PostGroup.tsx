@@ -5,8 +5,15 @@ import { PostCard } from "../PostCard/PostCard";
 import { PostGrupoProps } from "./@types";
 import { Container, HeaderSeach, InputSearch, CardPost } from "./styled";
 import ReactGA from "react-ga"
+import { useLocation } from "react-router-dom";
 
 export function PostGroup() {
+
+  const location = useLocation()
+
+  useEffect(()=>{
+    ReactGA.pageview(location.pathname, [] ,"Pagina inicial de posts")
+  },[])
   const query = "repo:montanari2019/github-blog";
   const [issues, setIssues] = useState<PostGrupoProps[]>([]);
   const [search, setSearch] = useState("");
@@ -72,7 +79,7 @@ export function PostGroup() {
         onChange={handleSearch}
       />
 
-      <button onClick={handleClick} type="button">Testando google analytics</button>
+      {/* <button onClick={handleClick} type="button">Testando google analytics</button> */}
 
       {search.length === 0 ? (
         

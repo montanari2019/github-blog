@@ -12,8 +12,11 @@ export function Router() {
   const location = useLocation();
 
   useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
+    ReactGA.  pageview(location.pathname + location.search);
+    // console.log("teste location: ", (location.pathname, location.search))
   }, [location]);
+
+
   return (
     // <BrowserRouter>
       <Routes>

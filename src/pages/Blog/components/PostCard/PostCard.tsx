@@ -7,6 +7,7 @@ import { format, formatDistanceToNow } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { ReliceBodyIssue } from "../../../../utils/ReliceBodyIssue";
 import { dateFormat } from "../../../../utils/formatDateRelativeToNow";
+import { DecodedBase64, EncodedBase64 } from "../../../../utils/Base64";
 
 
 export function PostCard({body, dateCreate, title, numberIssue}:PostCardProps ) {
@@ -15,8 +16,11 @@ export function PostCard({body, dateCreate, title, numberIssue}:PostCardProps ) 
 
  const { publisherdDateFormatted, publisherdDateRelativeToNow } = dateFormat(dateCreate)
 
+ const numberIssueEncoded = EncodedBase64(numberIssue.toLocaleString())
+ 
+
   function routerPost(){
-    history(`/post/${numberIssue}`)
+    history(`/post/${numberIssueEncoded}`)
   }
 
 

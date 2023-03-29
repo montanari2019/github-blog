@@ -10,10 +10,6 @@ export function PostGroup() {
   const [issues, setIssues] = useState<PostGrupoProps[]>([]);
   const [search, setSearch] = useState("");
 
-  // console.log("Renderizou")
-
-  // const searchFilterIssue: PostGrupoProps[] =
-  //   search.length > 0 ? issues.filter((element) => element.title.toLowerCase().includes(search.toLowerCase())) : [];
 
   const searchFilterIssue: PostGrupoProps[] =
   search.length > 0 ? SearchTitleAndBody(issues, search) : [];
@@ -42,7 +38,7 @@ export function PostGroup() {
       
       <HeaderSeach>
         <strong>Publicações</strong>
-        <p>{issues.length} Publicações</p>
+        <p>{searchFilterIssue.length > 0 ? searchFilterIssue.length : issues.length} Publicações</p>
       </HeaderSeach>
 
       <InputSearch

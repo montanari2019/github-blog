@@ -6,8 +6,8 @@ import { DefaultTheme } from "./styles/themes/DefaultThemes";
 export function App() {
   return (
     <ThemeProvider theme={DefaultTheme}>
-      <Router />
       <GlobalStyle />
+      <Router />
     </ThemeProvider>
   );
 }

@@ -19,7 +19,7 @@ export function Footer(){
 
             <Desenvolvedor >
                 <strong>
-                    Desenvolvido por Ikaro Monatanri
+                    Desenvolvido por Ikaro Montanari
                 </strong>
                 <p>{anoAtual}</p>
             </Desenvolvedor>

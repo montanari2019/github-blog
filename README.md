@@ -108,6 +108,7 @@ A aplicação também foi desenvolvida com responsividade, com o intuíto de mel
 # Autor
 
 <p dir="auto">Ikaro Montanari, entusiasta por tecnologia e desenvolvedor front-end</p>
+<p dir="auto">Desenvolvedor web front e back-end na IB3 TI</p>
 <p dir="auto">Formado em Análie e Desenvolvimento de Sistemas pelo IFRO em Vilhena-RO</p>
 
 # Contato

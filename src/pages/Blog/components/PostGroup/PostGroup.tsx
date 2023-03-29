@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { gitHubUserApi } from "../../../../services/ApiServices";
 import { SearchTitleAndBody } from "../../../../utils/SearchTitleAndBody";
 import { PostCard } from "../PostCard/PostCard";
 import { PostGrupoProps } from "./@types";
 import { Container, HeaderSeach, InputSearch, CardPost } from "./styled";
+import ReactGA from "react-ga"
 
 export function PostGroup() {
   const query = "repo:montanari2019/github-blog";
@@ -13,6 +14,18 @@ export function PostGroup() {
 
   const searchFilterIssue: PostGrupoProps[] =
   search.length > 0 ? SearchTitleAndBody(issues, search) : [];
+  
+
+  function handleSearch(event: ChangeEvent<HTMLInputElement>){
+    setSearch(event.target.value)
+
+    ReactGA.event({
+      category: 'Pesquisa',
+      action: 'Pesquisar issue no blog',
+      label: 'search issue'
+    });
+
+  }
 
   async function LoadIssues(query: string) {
     const { data, status } = await gitHubUserApi.get("search/issues", {
@@ -44,7 +57,7 @@ export function PostGroup() {
       <InputSearch
         type="text"
         placeholder="Buscar conteúdo"
-        onChange={(event) => setSearch(event.target.value)}
+        onChange={handleSearch}
       />
 
       {search.length === 0 ? (

@@ -31,6 +31,8 @@ Nesse projeto estamos consumindo em tempo real a api do git hub desde as fots, p
 
 A aplicação também foi desenvolvida com responsividade, com o intuíto de melhorar a experiência do usuário mobile.
 
+Obs: a aplicação está com integração com o google analytics para monitoramento.
+
 </br>
 <p> <a target="_blank" href="https://gitblog-ignite.onrender.com/">Click Aqui para acessar a aplicação</a> </p>
 

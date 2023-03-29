@@ -27,6 +27,18 @@ export function PostGroup() {
 
   }
 
+  function handleClick() {
+    console.log("ReactGA event")
+
+
+    ReactGA.event({
+      category: 'Botão',
+      action: 'Clique',
+      label: 'Botão de exemplo',
+      value: 1
+    });
+  }
+
   async function LoadIssues(query: string) {
     const { data, status } = await gitHubUserApi.get("search/issues", {
       params: {
@@ -59,6 +71,8 @@ export function PostGroup() {
         placeholder="Buscar conteúdo"
         onChange={handleSearch}
       />
+
+      <button onClick={handleClick} type="button">Testando google analytics</button>
 
       {search.length === 0 ? (
         
